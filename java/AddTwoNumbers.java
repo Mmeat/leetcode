@@ -45,42 +45,29 @@ class ListNode {
     }
 }
 class Solution {
-
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        long ll1 = l1.val;
-        long ll2 = l2.val;
-        long bitsignificance1 = 10L;
-        long bitsignificance2 = 10L;
-        while(l1.next != null){
-            l1 = l1.next;
-            ll1 = ll1+l1.val*bitsignificance1;
-            bitsignificance1 = bitsignificance1 *10;
+        ListNode head = new ListNode((l1.val+l2.val)%10);
+        ListNode cursor = head;
+        int carrierBit = (l1.val+l2.val)/10;
+        while(l1.next != null||l2.next != null){
+            int l1val = 0;
+            int l2val = 0;
+            if(l1.next != null){
+                l1 = l1.next;
+                l1val = l1.val;
+            }
+            if(l2.next != null){
+                l2 = l2.next;
+                l2val = l2.val;
+            }
+            int sum = l1val + l2val + carrierBit;
+            cursor.next = new ListNode(sum%10);
+            cursor = cursor.next;
+            carrierBit = sum/10;
         }
-        while(l2.next != null){
-            l2 = l2.next;
-            ll2 = ll2+l2.val*bitsignificance2;
-            bitsignificance2 = bitsignificance2*10;
+        if(carrierBit > 0){
+            cursor.next = new ListNode(carrierBit);
         }
-        long result = ll1 + ll2;
-        System.out.println(ll1);
-        System.out.println(ll2);
-        System.out.println("step1");
-        System.out.println(result);
-        ListNode head = new ListNode((int)result%10);
-        System.out.println((int)(result%10));
-        ListNode next = head;
-        result = result/10;
-        System.out.println(result);
-        while(result > 0){
-            next.next = new ListNode((int)result%10);
-            next = next.next;
-            result = result/10;
-            System.out.println(result);
-            System.out.println(head);
-        }
-        System.out.println(head);
         return head;
     }
-
-
 }
