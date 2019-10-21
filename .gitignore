@@ -1,0 +1,31 @@
+*.class
+# Package Files #
+*.jar
+*.war
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+*._DS_Store
+*.DS_Store
+*._.DS_Store
+*.classpath
+*.project
+.idea
+*.iml
+.settings/
+client-builder/
+*.log
+*.MF
+
+rebel.xml
+**/dist/
+**/target/
+**/out/
+**/node_modules/
+#documentBase
+**/overlays/
+package-lock.json
+eshipping-projects/future-driver/.factorypath
+*.factorypath
+eshipping-projects/eshipping-truck/.sts4-cache/classpath-data.json
