@@ -1,15 +1,14 @@
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+package addTwoNumbers;
 
 /**
  * Definition for singly-linked list.
- * public class ListNode {
+ * public class addTwoNumbers.ListNode {
  *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     addTwoNumbers.ListNode next;
+ *     addTwoNumbers.ListNode(int x) { val = x; }
  * }
  */
-public class AddTwoNumbers{
+public class Main{
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         ListNode next = head;
